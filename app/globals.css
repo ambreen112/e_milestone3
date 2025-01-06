@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geistsans.woff2') format('woff2'),
+       url('/fonts/geistsans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist_Mono';
+  src: url('/fonts/geistsans.woff2') format('woff2'),
+       url('/fonts/geistmono.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

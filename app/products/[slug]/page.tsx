@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
+import Link from "next/link";
 
 // Fetch product data directly in the component using async/await
 const ProductPage = async ({ params }: { params: { slug: string } }) => {
@@ -45,15 +46,32 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
           {/* Product Details Section */}
           <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">{product.name}</h1>
-            <p className="text-lg text-gray-600 mb-6">{product.description}</p>
+            <p className="text-base text-gray-600 mb-6 ml-72 mr-72">{product.description}</p>
+            <div className="flex justify-center gap-2">
             <p className="text-2xl font-semibold text-green-600 mb-8">${product.price}</p>
-    
+    <p className="text-red-600 line-through text-xl font-bold ">$1000</p>
+    </div>
+    <p className=" text-sm text-gray-600 font-semibold">shipping charges $100</p>
             {/* Add to Cart Button */}
-            <button className="bg-blue-600 text-white py-3 px-6 rounded-lg text-lg hover:bg-blue-700 transition duration-300">
-              Add to Cart
+            <div className="flex justify-center gap-3 mt-2">     
+            <Link href="/cart">
+      <button
+        className="bg-blue-600 text-white py-2 px-4 rounded-lg text-lg hover:bg-blue-700 transition duration-300"
+        type="button">
+        Add to Cart
+      </button>
+    </Link>
+
+            <button
+             className="bg-gray-400 text-white py-1 px-3 rounded-sm text-lg hover:bg-blue-700 transition duration-300"
+             type="button">
+              Check out
             </button>
+            </div>
+            </div>
+            
           </div>
-        </div>
+      
       </>
     );
     
