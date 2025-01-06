@@ -6,7 +6,7 @@ export default function Footer(){
        
        
          
-          <nav className="md:ml-auto flex justify-center gap-6 mt-9">
+          <nav className="md:ml-auto flex justify-center gap-7 mt-9">
             <Link href={"https://www.linkedin.com"}>
               <Image src={"/link.jpg"} alt="link" width={50} height={50} />
             </Link>
