@@ -7,6 +7,6 @@ export default{
         title: "Category Title",
         type: "string",
     },
-]
+],
 
 };

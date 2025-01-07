@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // Fetch product data directly in the component using async/await
 const ProductPage = async ({ params }: { params: { slug: string } }) => {
-  const { slug } =await  params;
+  const { slug } =  params;
 
   // Fetch product data from Sanity based on the dynamic slug
   const product = await client.fetch(

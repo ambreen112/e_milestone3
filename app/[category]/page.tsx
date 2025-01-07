@@ -1,8 +1,7 @@
-
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next"; // Import the Metadata type
+import { Metadata } from "next";
 
 // Function to fetch data based on the category
 async function getData(category: string) {
@@ -28,24 +27,25 @@ interface Product {
   categoryName: string;
 }
 
-// Defining the PageProps interface for dynamic routes
+// Correct typing for dynamic route parameters
 interface PageProps {
   params: {
-    category: string;
+    category: string; // This should match the dynamic parameter in the URL
   };
 }
 
 // Generate metadata for the category page (for SEO)
 export function generateMetadata({ params }: PageProps): Metadata {
-  const { category } = params;
+  const { category } = params;  // Directly using `params` without awaiting
   return {
     title: `Explore ${category} Products`,
     description: `Browse the best ${category} products, carefully curated just for you!`,
   };
 }
 
+// Server Component for fetching the data
 export default async function CategoryPage({ params }: PageProps) {
-  const { category } = params;
+  const { category } = params;  // No need to await params, it's directly available
 
   // Fetch the data using the category
   const data: Product[] = await getData(category);
@@ -83,8 +83,7 @@ export default async function CategoryPage({ params }: PageProps) {
             </Link>
           </div>
         ))}
-        </section>
-        </>
-  )
+      </section>
+    </>
+  );
 }
-  
